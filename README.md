@@ -26,7 +26,6 @@ return {
     -- Toggle the UI in both normal and terminal modes
     vim.keymap.set({ "n", "t" }, "<C-.>", "<Cmd>LazyDotnet<CR>", { desc = "Toggle LazyDotnet" })
   end,
-  ---@type LazyDotnetConfig
   opts = {
     -- Optional: Configure if your lazydotnet executable is not in your PATH
     -- cmd = { "path/to/lazydotnet" },

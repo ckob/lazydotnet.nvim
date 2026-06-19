@@ -1,15 +1,15 @@
 local M = {}
 
----@class LazyDotnetWindowConfig
+---@class lazydotnet.WindowConfig
 ---@field width_ratio? number The width of the floating window relative to the editor width (0.0 to 1.0)
 ---@field height_ratio? number The height of the floating window relative to the editor height (0.0 to 1.0)
 ---@field border? "none" | "single" | "double" | "rounded" | "solid" | "shadow" The border style of the floating window
 
----@class LazyDotnetConfig
+---@class lazydotnet.Config
 ---@field cmd? string[] The command and arguments to launch lazydotnet
----@field window? LazyDotnetWindowConfig Configuration for the floating window
+---@field window? lazydotnet.WindowConfig Configuration for the floating window
 
----@type LazyDotnetConfig
+---@type lazydotnet.Config
 M.config = {
 	cmd = { "lazydotnet" },
 	window = {
@@ -19,7 +19,7 @@ M.config = {
 	},
 }
 
----@param opts? LazyDotnetConfig
+---@param opts? lazydotnet.Config
 function M.setup(opts)
 	M.config = vim.tbl_deep_extend("force", M.config, opts or {})
 end
