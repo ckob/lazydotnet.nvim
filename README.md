@@ -4,7 +4,6 @@ A Neovim plugin that seamlessly integrates the [lazydotnet](https://github.com/c
 
 <img width="2136" height="1148" alt="lazydotnet-demo" src="https://github.com/user-attachments/assets/ff2ff471-bb3f-466c-948f-35e54aa46ad1" />
 
-
 ## ✨ Features
 
 - **Seamless Integration**: Run `lazydotnet` inside a floating Neovim terminal.
@@ -14,7 +13,6 @@ A Neovim plugin that seamlessly integrates the [lazydotnet](https://github.com/c
 
 ## ⚡️ Requirements
 
-- **Neovim** >= 0.8.0
 - **[lazydotnet](https://github.com/ckob/lazydotnet)** CLI tool installed and available in your `$PATH`.
 
 ## 📦 Installation
@@ -29,10 +27,6 @@ return {
     -- Toggle the UI in both normal and terminal modes
     vim.keymap.set({ "n", "t" }, "<C-.>", "<Cmd>LazyDotnet<CR>", { desc = "Toggle LazyDotnet" })
   end,
-  opts = {
-    -- Optional: Configure if your lazydotnet executable is not in your PATH
-    -- cmd = { "path/to/lazydotnet" },
-  },
 }
 ```
 
@@ -50,13 +44,14 @@ Or by pressing the key combination you defined in your configuration (e.g., `<C-
 - **If the TUI is open**: It will be hidden, keeping the process running in the background.
 - **If the TUI is hidden**: It will restore the window exactly where you left off.
 - **Quitting the TUI**: Pressing the application's quit key (usually `q`) inside the TUI will terminate the background process and clean up the buffer.
+- **Editor Integration**: The plugin automatically configures the `$EDITOR` environment variable for the `lazydotnet` process. For example, when you press `e` on a project or a test within `lazydotnet`, it will seamlessly open that file in your current Neovim instance rather than spawning a new editor!
 
 ## ⚙️ Configuration
 
 `lazydotnet.nvim` comes with the following default configuration:
 
 ```lua
----@type LazyDotnetConfig
+---@type lazydotnet.Config
 require("lazydotnet").setup({
   -- The command to run lazydotnet.
   -- You can pass arguments here as well, e.g., { "lazydotnet", "--project", "my-project.csproj" }
@@ -78,3 +73,4 @@ Pull requests and issues are welcome! Feel free to open an issue to discuss any 
 ## 📝 License
 
 [MIT](./LICENSE)
+
