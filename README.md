@@ -2,6 +2,9 @@
 
 A Neovim plugin that seamlessly integrates the [lazydotnet](https://github.com/ckob/lazydotnet) terminal UI for .NET development directly into a floating window.
 
+<img width="2136" height="1148" alt="lazydotnet-demo" src="https://github.com/user-attachments/assets/ff2ff471-bb3f-466c-948f-35e54aa46ad1" />
+
+
 ## ✨ Features
 
 - **Seamless Integration**: Run `lazydotnet` inside a floating Neovim terminal.
