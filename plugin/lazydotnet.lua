@@ -110,6 +110,7 @@ end
 			EDITOR = editor_cmd,
 			NVIM = vim.env.NVIM,
 			NVIM_BIN = vim.v.progpath,
+			COLORTERM = vim.env.COLORTERM,
 		},
 		on_exit = function(job_id, code, event)
 			if code == 0 then
